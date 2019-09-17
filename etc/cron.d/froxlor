@@ -1,0 +1,10 @@
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+#
+*/5 * * * * root /usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --tasks 1> /dev/null
+0 0 * * * root /usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --traffic 1> /dev/null
+5 0 * * * root /usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --used_tickets_reset 1> /dev/null
+7 0 1 * * root /usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --ticketarchive 1> /dev/null
+10 0 * * * root /usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --usage_report 1> /dev/null
+0 */6 * * * root /usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --mailboxsize 1> /dev/null
+*/5 * * * * root /usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --letsencrypt 1> /dev/null
+15 0 * * * root /usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --backup 1> /dev/null

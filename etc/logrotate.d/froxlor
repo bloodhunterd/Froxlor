@@ -1,0 +1,16 @@
+#
+# Froxlor logrotate snipet
+#
+/var/customers/logs/*.log {
+  missingok
+  weekly
+  rotate 4
+  compress
+  delaycompress
+  notifempty
+  create
+  sharedscripts
+  postrotate
+  service nginx reload > /dev/null 2>&1 || true
+  endscript
+}
