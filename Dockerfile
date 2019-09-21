@@ -1,10 +1,11 @@
 FROM debian:stable-slim
 
-ARG PHP_VERSION="7.3"
-
 # Time and location
 ENV TZ=Europe/Berlin
 ENV LOCALE="de_DE.UTF-8 UTF-8"
+
+# PHP
+ENV PHP_VERSION="7.3"
 
 # Webserver
 EXPOSE 80
