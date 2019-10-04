@@ -7,6 +7,9 @@ ENV LOCALE="de_DE.UTF-8 UTF-8"
 # PHP
 ENV PHP_VERSION="7.3"
 
+# Froxlor
+ENV FRX_VERSION="0.9.40.1"
+
 # Webserver
 EXPOSE 80
 EXPOSE 443
@@ -119,9 +122,9 @@ RUN mkdir -p /etc/ssl/froxlor
 
 # Download Froxlor
 RUN cd /var/www/ && \
-    wget https://files.froxlor.org/releases/froxlor-latest.tar.gz && \
-    tar xvfz froxlor-latest.tar.gz && \
-    rm froxlor-latest.tar.gz && \
+    wget https://files.froxlor.org/releases/froxlor-${FRX_VERSION}.tar.gz && \
+    tar xvfz froxlor-${FRX_VERSION}.tar.gz && \
+    rm froxlor-${FRX_VERSION}.tar.gz && \
     chown -R froxlorlocal:froxlorlocal /var/www/froxlor/
 
 # Add NGINX configuration
