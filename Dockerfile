@@ -5,7 +5,8 @@ ENV TZ=Europe/Berlin
 ENV LOCALE="de_DE.UTF-8 UTF-8"
 
 # PHP
-ENV PHP_VERSION="7.3"
+ENV PHP_VERSION_OLD="7.3"
+ENV PHP_VERSION="7.4"
 
 # Froxlor
 ENV FRX_VERSION="0.10.8"
@@ -64,7 +65,26 @@ RUN cp /usr/share/awstats/tools/awstats_buildstaticpages.pl /usr/bin/ && \
     sed -i.bak 's|^\\(DirIcons=\\).*$|\\1\\"/awstats-icon\\"|' /etc/awstats//awstats.model.conf && \
     rm /etc/cron.d/awstats
 
-# Install PHP
+# Install PHP (old version)
+RUN apt-get install -y --no-install-recommends \
+    php${PHP_VERSION_OLD} \
+    php${PHP_VERSION_OLD}-fpm \
+    php${PHP_VERSION_OLD}-common \
+    php${PHP_VERSION_OLD}-bcmath \
+    php${PHP_VERSION_OLD}-bz2 \
+    php${PHP_VERSION_OLD}-cli \
+    php${PHP_VERSION_OLD}-curl \
+    php${PHP_VERSION_OLD}-gd \
+    php${PHP_VERSION_OLD}-imap \
+    php${PHP_VERSION_OLD}-intl \
+    php${PHP_VERSION_OLD}-json \
+    php${PHP_VERSION_OLD}-mbstring \
+    php${PHP_VERSION_OLD}-mysql \
+    php${PHP_VERSION_OLD}-opcache \
+    php${PHP_VERSION_OLD}-xml \
+    php${PHP_VERSION_OLD}-zip
+
+# Install PHP (current version)
 RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION} \
     php${PHP_VERSION}-fpm \

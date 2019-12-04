@@ -1,22 +1,31 @@
 #!/bin/bash
 
 # Set timezone
-ln -snf "/usr/share/zoneinfo/${TZ}" etc/localtime && echo "${TZ}" > /etc/timezone
+ln -snf "/usr/share/zoneinfo/${TZ}" etc/localtime && echo "${TZ}" > /etc/timezone && \
 
 # Set locales
-echo "${LOCALE}" >> /etc/locale.gen && locale-gen
+echo "${LOCALE}" >> /etc/locale.gen && locale-gen && \
 
-#service quota start
+# Start Quota
+#service quota start && \
 
-service nscd start
+# Start NSCD
+service nscd start && \
 
-service cron start
+# Start CRON
+service cron start && \
 
-/usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --force
+# Execute Froxlor's CRON job
+/usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --force && \
 
-service php${PHP_VERSION}-fpm start
+# Start PHP-FPM (old version)
+service php${PHP_VERSION_OLD}-fpm start && \
 
-service nginx start
+# Start PHP-FPM (current version)
+service php${PHP_VERSION}-fpm start && \
 
-# Start dummy process
-tail -f /dev/null
+# Start NGINX
+service nginx start && \
+
+# Show log
+tail -f /var/log/nginx/error.log
