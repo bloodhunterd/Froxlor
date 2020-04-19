@@ -1,22 +1,23 @@
 FROM debian:stable-slim
 
-# Time and location
-ENV TZ=Europe/Berlin
-ENV LOCALE="de_DE.UTF-8 UTF-8"
-
-# PHP
-ENV PHP_VERSION_OLD="7.3"
-ENV PHP_VERSION="7.4"
-
 # Froxlor
-ENV FRX_VERSION="0.10.13"
+ARG VERSION=0.10.15
+
+# Time and location
+ENV TZ Europe/Berlin
+ENV LOCALE de_DE.UTF-8 UTF-8
+
+# PHP versions
+ENV PHP_VERSION 7.3
+ENV PHP_VERSION_2 7.4
 
 # Webserver
 EXPOSE 80
 EXPOSE 443
 
 # Update and upgrade package repositories
-RUN apt-get update && apt-get upgrade -y --no-install-recommends
+RUN apt-get update && \
+    apt-get upgrade -y --no-install-recommends
 
 # Install required packages
 RUN apt-get install -y --no-install-recommends \
@@ -50,13 +51,11 @@ RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8 
 # Update package repositories
 RUN apt-get update
 
-# Install NGINX, MariaDB, AWStats and Quota
+# Install NGINX, MariaDB and AWStats
 RUN apt-get install -y --no-install-recommends \
     nginx \
     mariadb-client \
-    awstats \
-    quota \
-    quotatool
+    awstats
 
 # Configure AWStats
 RUN cp /usr/share/awstats/tools/awstats_buildstaticpages.pl /usr/bin/ && \
@@ -65,26 +64,7 @@ RUN cp /usr/share/awstats/tools/awstats_buildstaticpages.pl /usr/bin/ && \
     sed -i.bak 's|^\\(DirIcons=\\).*$|\\1\\"/awstats-icon\\"|' /etc/awstats//awstats.model.conf && \
     rm /etc/cron.d/awstats
 
-# Install PHP (old version)
-RUN apt-get install -y --no-install-recommends \
-    php${PHP_VERSION_OLD} \
-    php${PHP_VERSION_OLD}-fpm \
-    php${PHP_VERSION_OLD}-common \
-    php${PHP_VERSION_OLD}-bcmath \
-    php${PHP_VERSION_OLD}-bz2 \
-    php${PHP_VERSION_OLD}-cli \
-    php${PHP_VERSION_OLD}-curl \
-    php${PHP_VERSION_OLD}-gd \
-    php${PHP_VERSION_OLD}-imap \
-    php${PHP_VERSION_OLD}-intl \
-    php${PHP_VERSION_OLD}-json \
-    php${PHP_VERSION_OLD}-mbstring \
-    php${PHP_VERSION_OLD}-mysql \
-    php${PHP_VERSION_OLD}-opcache \
-    php${PHP_VERSION_OLD}-xml \
-    php${PHP_VERSION_OLD}-zip
-
-# Install PHP (current version)
+# Install PHP
 RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION} \
     php${PHP_VERSION}-fpm \
@@ -101,7 +81,23 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION}-mysql \
     php${PHP_VERSION}-opcache \
     php${PHP_VERSION}-xml \
-    php${PHP_VERSION}-zip
+    php${PHP_VERSION}-zip \
+    php${PHP_VERSION_2} \
+    php${PHP_VERSION_2}-fpm \
+    php${PHP_VERSION_2}-common \
+    php${PHP_VERSION_2}-bcmath \
+    php${PHP_VERSION_2}-bz2 \
+    php${PHP_VERSION_2}-cli \
+    php${PHP_VERSION_2}-curl \
+    php${PHP_VERSION_2}-gd \
+    php${PHP_VERSION_2}-imap \
+    php${PHP_VERSION_2}-intl \
+    php${PHP_VERSION_2}-json \
+    php${PHP_VERSION_2}-mbstring \
+    php${PHP_VERSION_2}-mysql \
+    php${PHP_VERSION_2}-opcache \
+    php${PHP_VERSION_2}-xml \
+    php${PHP_VERSION_2}-zip
 
 # Install additional packages
 RUN apt-get install -y --no-install-recommends \
@@ -142,9 +138,9 @@ RUN mkdir -p /etc/ssl/froxlor
 
 # Download Froxlor
 RUN cd /var/www/ && \
-    wget https://files.froxlor.org/releases/froxlor-${FRX_VERSION}.tar.gz && \
-    tar xvfz froxlor-${FRX_VERSION}.tar.gz && \
-    rm froxlor-${FRX_VERSION}.tar.gz && \
+    wget https://files.froxlor.org/releases/froxlor-${VERSION}.tar.gz && \
+    tar xvfz froxlor-${VERSION}.tar.gz && \
+    rm froxlor-${VERSION}.tar.gz && \
     chown -R froxlorlocal:froxlorlocal /var/www/froxlor/
 
 # Add NGINX configuration

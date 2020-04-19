@@ -10,8 +10,9 @@ Docker Image of Froxlor Server Management Panel.
 
 ### Docker environment
 
-| ENV | Values¹ | Description
-|--- |--- |---
+| ENV | Values¹ | Default | Description
+|--- |--- |--- |---
+| TZ | [PHP: List of supported timezones - Manual](https://www.php.net/manual/en/timezones.php) | Europe/Berlin | Timezone.
 
 ¹ *Possible values are separated by a slash or a range is indicated by a dash.*
 
@@ -27,6 +28,9 @@ Please note the [changelog](https://github.com/bloodhunterd/froxlor-docker/blob/
 ## Build With
 
 * [Froxlor](https://froxlor.org/)
+* [NGINX](https://www.nginx.com/)
+* [MariaDB](https://mariadb.org/)
+* [PHP](https://www.php.net/)
 * [Debian](https://www.debian.org/)
 * [Docker](https://www.docker.com/)
 
