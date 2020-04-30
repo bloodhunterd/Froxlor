@@ -8,7 +8,7 @@ Docker Image of Froxlor Server Management Panel.
 
 ## Configuration
 
-### Docker environment
+### Environment
 
 | ENV | Values¹ | Default | Description
 |--- |--- |--- |---
@@ -18,7 +18,18 @@ Docker Image of Froxlor Server Management Panel.
 
 ### Volumes
 
+Persist Froxlor's customer web, mail and log directories. 
+
 ```bash
+    volumes:
+      - ./customers/:/var/customers/
+```
+
+Persist SSL certificates created by [Let's Encrypt](https://letsencrypt.org/).
+
+```bash
+    volumes:
+      - ./ssl/:/etc/ssl/froxlor/
 ```
 
 ## Update
@@ -31,6 +42,7 @@ Please note the [changelog](https://github.com/bloodhunterd/froxlor-docker/blob/
 * [NGINX](https://www.nginx.com/)
 * [MariaDB](https://mariadb.org/)
 * [PHP](https://www.php.net/)
+* [Let's Encrypt](https://letsencrypt.org/)
 * [Debian](https://www.debian.org/)
 * [Docker](https://www.docker.com/)
 

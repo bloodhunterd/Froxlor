@@ -1,14 +1,14 @@
 version: '3'
 
 services:
-  ftp:
+  froxlor:
     image: bloodhunterd/froxlor
     environment:
-      - TZ: 'Europe/Berlin'
-      - LOCALE: 'de_DE.UTF-8 UTF-8'
-    volumes:
-      -
+      - TZ: Europe/Berlin
     ports:
       - 80
       - 443
     restart: unless-stopped
+    volumes:
+      - ./customers/:/var/customers/
+      - ./ssl/:/etc/ssl/froxlor/
