@@ -143,7 +143,7 @@ RUN mkdir -p /var/www && \
 # Download Froxlor
 RUN cd /var/www/ && \
     wget https://files.froxlor.org/releases/froxlor-${VERSION}.tar.gz && \
-    tar xvfz froxlor-${VERSION}.tar.gz && \
+    tar xfz froxlor-${VERSION}.tar.gz && \
     rm froxlor-${VERSION}.tar.gz && \
     chown -R froxlorlocal:froxlorlocal /var/www/froxlor/
 
