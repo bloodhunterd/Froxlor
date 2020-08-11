@@ -10,6 +10,6 @@ services:
       - 443
     restart: unless-stopped
     volumes:
-      - ./userdata.php:/var/www/froxlor/lib/userdata.inc.php
+      - ./froxlor/:/var/www/froxlor/
       - ./customers/:/var/customers/
       - ./ssl/:/etc/ssl/froxlor/
