@@ -3,11 +3,9 @@ version: '3'
 services:
   froxlor:
     image: bloodhunterd/froxlor
-    environment:
-      - TZ: Europe/Berlin
     ports:
-      - 80
-      - 443
+      - '80'
+      - '443'
     restart: unless-stopped
     volumes:
       - ./froxlor/:/var/www/froxlor/

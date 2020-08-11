@@ -4,9 +4,15 @@
 
 # Froxlor Docker
 
-Docker Image of Froxlor Server Management Panel.
+Docker Image for Froxlor Server Management Panel.
+
+## Installation
+
+[Froxlor](https://froxlor.org/) must be downloaded separately and mounted into the container, since it must be setup individually.
 
 ## Configuration
+
+See distribution [Docker Compose file](https://github.com/bloodhunterd/froxlor-docker/blob/master/docker-compose.dist.yml).
 
 ### Environment
 
@@ -14,15 +20,13 @@ Docker Image of Froxlor Server Management Panel.
 |--- |--- |--- |---
 | TZ | [PHP: List of supported timezones - Manual](https://www.php.net/manual/en/timezones.php) | Europe/Berlin | Timezone.
 
-¹ *Possible values are separated by a slash or a range is indicated by a dash.*
-
 ### Volumes
 
-Persist user data (database connection settings). 
+Persist Froxlor, so the build in update process can be used. 
 
 ```bash
     volumes:
-      - ./customers/:/var/customers/
+      - ./froxlor/:/var/www/froxlor/
 ```
 
 Persist customer web, mail and log directories. 
@@ -43,6 +47,11 @@ Persist SSL certificates ([Let's Encrypt](https://letsencrypt.org/)).
 
 Please note the [changelog](https://github.com/bloodhunterd/froxlor-docker/blob/master/CHANGELOG.md) to check for configuration changes before updating.
 
+```bash
+docker-compose pull
+docker-compose up -d
+```
+
 ## Build With
 
 * [Froxlor](https://froxlor.org/)
@@ -59,4 +68,4 @@ Please note the [changelog](https://github.com/bloodhunterd/froxlor-docker/blob/
 
 ## License
 
-This project is licensed under the Unlicense - see [LICENSE.md](https://github.com/bloodhunterd/froxlor-docker/blob/master/LICENSE) file for details.
+This project is licensed under the MIT - see [LICENSE.md](https://github.com/bloodhunterd/froxlor-docker/blob/master/LICENSE) file for details.

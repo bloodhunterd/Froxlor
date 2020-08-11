@@ -1,15 +1,13 @@
 FROM debian:stable-slim
 
+# MariaDB
+ARG MARIADB_VERSION=10.5
+# PHP
+ENV PHP_VERSION_1=7.2
+ENV PHP_VERSION_2=7.3
+ENV PHP_VERSION_3=7.4
 # Timezone
 ENV TZ=Europe/Berlin
-
-# Froxlor
-ARG VERSION=0.10.15
-
-# PHP
-ENV PHP_VERSION_SFO=7.2
-ENV PHP_VERSION_PREV=7.3
-ENV PHP_VERSION_MAIN=7.4
 
 # NGINX
 EXPOSE 80
@@ -21,19 +19,20 @@ RUN apt-get update && \
 
 # Install required packages
 RUN apt-get install -y --no-install-recommends \
+    apt-listchanges \
+    apt-transport-https \
 	apt-utils \
-    wget \
+    ca-certificates \
     curl \
+    dirmngr \
+    gnupg2 \
     locales \
     locales-all \
-    gnupg2 \
-    dirmngr \
     lsb-release \
-    ca-certificates \
-    apt-transport-https \
     software-properties-common \
+    syslog-ng \
     unattended-upgrades \
-    apt-listchanges
+    wget
 
 # Configure NGINX repository
 RUN echo "deb http://nginx.org/packages/mainline/debian `lsb_release -cs` nginx" \
@@ -47,72 +46,71 @@ RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 
 # Configure MariaDB repository
 RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8 && \
-    add-apt-repository 'deb [arch=amd64] http://ftp.hosteurope.de/mirror/mariadb.org/repo/10.4/debian buster main'
+    add-apt-repository "deb [arch=amd64] http://ftp.hosteurope.de/mirror/mariadb.org/repo/${MARIADB_VERSION}/debian buster main"
 
 # Update package repositories
 RUN apt-get update
 
 # Install NGINX, MariaDB, AwStats, Cron and Let's Encrypt
 RUN apt-get install -y --no-install-recommends \
-    nginx \
-    mariadb-client \
     awstats \
     cron \
-    nscd \
     letsencrypt \
+    libnss-extrausers \
     logrotate \
-    libnss-extrausers
+    mariadb-client \
+    nginx
 
 # Install PHP versions
 RUN apt-get install -y --no-install-recommends \
-    php${PHP_VERSION_SFO} \
-    php${PHP_VERSION_SFO}-fpm \
-    php${PHP_VERSION_SFO}-common \
-    php${PHP_VERSION_SFO}-bcmath \
-    php${PHP_VERSION_SFO}-bz2 \
-    php${PHP_VERSION_SFO}-cli \
-    php${PHP_VERSION_SFO}-curl \
-    php${PHP_VERSION_SFO}-gd \
-    php${PHP_VERSION_SFO}-imap \
-    php${PHP_VERSION_SFO}-intl \
-    php${PHP_VERSION_SFO}-json \
-    php${PHP_VERSION_SFO}-mbstring \
-    php${PHP_VERSION_SFO}-mysql \
-    php${PHP_VERSION_SFO}-opcache \
-    php${PHP_VERSION_SFO}-xml \
-    php${PHP_VERSION_SFO}-zip \
-    php${PHP_VERSION_PREV} \
-    php${PHP_VERSION_PREV}-fpm \
-    php${PHP_VERSION_PREV}-common \
-    php${PHP_VERSION_PREV}-bcmath \
-    php${PHP_VERSION_PREV}-bz2 \
-    php${PHP_VERSION_PREV}-cli \
-    php${PHP_VERSION_PREV}-curl \
-    php${PHP_VERSION_PREV}-gd \
-    php${PHP_VERSION_PREV}-imap \
-    php${PHP_VERSION_PREV}-intl \
-    php${PHP_VERSION_PREV}-json \
-    php${PHP_VERSION_PREV}-mbstring \
-    php${PHP_VERSION_PREV}-mysql \
-    php${PHP_VERSION_PREV}-opcache \
-    php${PHP_VERSION_PREV}-xml \
-    php${PHP_VERSION_PREV}-zip \
-    php${PHP_VERSION_MAIN} \
-    php${PHP_VERSION_MAIN}-fpm \
-    php${PHP_VERSION_MAIN}-common \
-    php${PHP_VERSION_MAIN}-bcmath \
-    php${PHP_VERSION_MAIN}-bz2 \
-    php${PHP_VERSION_MAIN}-cli \
-    php${PHP_VERSION_MAIN}-curl \
-    php${PHP_VERSION_MAIN}-gd \
-    php${PHP_VERSION_MAIN}-imap \
-    php${PHP_VERSION_MAIN}-intl \
-    php${PHP_VERSION_MAIN}-json \
-    php${PHP_VERSION_MAIN}-mbstring \
-    php${PHP_VERSION_MAIN}-mysql \
-    php${PHP_VERSION_MAIN}-opcache \
-    php${PHP_VERSION_MAIN}-xml \
-    php${PHP_VERSION_MAIN}-zip
+    php${PHP_VERSION_1} \
+    php${PHP_VERSION_1}-common \
+    php${PHP_VERSION_1}-bcmath \
+    php${PHP_VERSION_1}-bz2 \
+    php${PHP_VERSION_1}-cli \
+    php${PHP_VERSION_1}-curl \
+    php${PHP_VERSION_1}-fpm \
+    php${PHP_VERSION_1}-gd \
+    php${PHP_VERSION_1}-imap \
+    php${PHP_VERSION_1}-intl \
+    php${PHP_VERSION_1}-json \
+    php${PHP_VERSION_1}-mbstring \
+    php${PHP_VERSION_1}-mysql \
+    php${PHP_VERSION_1}-opcache \
+    php${PHP_VERSION_1}-xml \
+    php${PHP_VERSION_1}-zip \
+    php${PHP_VERSION_2} \
+    php${PHP_VERSION_2}-common \
+    php${PHP_VERSION_2}-bcmath \
+    php${PHP_VERSION_2}-bz2 \
+    php${PHP_VERSION_2}-cli \
+    php${PHP_VERSION_2}-curl \
+    php${PHP_VERSION_2}-fpm \
+    php${PHP_VERSION_2}-gd \
+    php${PHP_VERSION_2}-imap \
+    php${PHP_VERSION_2}-intl \
+    php${PHP_VERSION_2}-json \
+    php${PHP_VERSION_2}-mbstring \
+    php${PHP_VERSION_2}-mysql \
+    php${PHP_VERSION_2}-opcache \
+    php${PHP_VERSION_2}-xml \
+    php${PHP_VERSION_2}-zip \
+    php${PHP_VERSION_3} \
+    php${PHP_VERSION_3}-common \
+    php${PHP_VERSION_3}-bcmath \
+    php${PHP_VERSION_3}-bz2 \
+    php${PHP_VERSION_3}-cli \
+    php${PHP_VERSION_3}-curl \
+    php${PHP_VERSION_3}-fpm \
+    php${PHP_VERSION_3}-gd \
+    php${PHP_VERSION_3}-imap \
+    php${PHP_VERSION_3}-intl \
+    php${PHP_VERSION_3}-json \
+    php${PHP_VERSION_3}-mbstring \
+    php${PHP_VERSION_3}-mysql \
+    php${PHP_VERSION_3}-opcache \
+    php${PHP_VERSION_3}-xml \
+    php${PHP_VERSION_3}-zip
 
 # Configure AWStats
 RUN cp /usr/share/awstats/tools/awstats_buildstaticpages.pl /usr/bin/ && \
@@ -139,13 +137,6 @@ RUN mkdir -p /var/www && \
     mkdir -p /var/customers/webs && \
     mkdir -p /var/customers/tmp && \
     mkdir -p /etc/ssl/froxlor
-
-# Download Froxlor
-RUN cd /var/www/ && \
-    wget https://files.froxlor.org/releases/froxlor-${VERSION}.tar.gz && \
-    tar xfz froxlor-${VERSION}.tar.gz && \
-    rm froxlor-${VERSION}.tar.gz && \
-    chown -R froxlorlocal:froxlorlocal /var/www/froxlor/
 
 # Add NGINX configuration
 COPY ./etc/nginx/nginx.conf /etc/nginx/nginx.conf

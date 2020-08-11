@@ -4,21 +4,17 @@
 ln -snf "/usr/share/zoneinfo/${TZ}" etc/localtime && \
 echo "${TZ}" > /etc/timezone
 
-# Start NSCD
-service nscd start
-
-# Start CRON
 service cron start
 
-# Start PHP-FPM processes
-service php${PHP_VERSION_SFO}-fpm start
-service php${PHP_VERSION_PREV}-fpm start
-service php${PHP_VERSION_MAIN}-fpm start
+service php${PHP_VERSION_1}-fpm start
+service php${PHP_VERSION_2}-fpm start
+service php${PHP_VERSION_3}-fpm start
 
-# Start NGINX
 service nginx start
 
-# Run Cron
+sleep 10
+
+# Run Froxlor Cron
 /usr/bin/nice -n 5 /usr/bin/php -q /var/www/froxlor/scripts/froxlor_master_cronjob.php --force
 
 # Show log
