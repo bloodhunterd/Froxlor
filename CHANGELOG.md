@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## <a name="v1-1-0"></a> [1.1.0](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.1.0) - 05.11.2020
+
+* Another possible fix to prevent failing PHP services on the first start up added
+* Added BIND as DNS service
+
 ## <a name="v1-0-0"></a> [1.0.0](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.0.0) - 11.08.2020
 
 * Unneeded NSCD removed to increase performance

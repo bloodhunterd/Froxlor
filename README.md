@@ -1,14 +1,18 @@
 [![Release](https://img.shields.io/github/v/release/bloodhunterd/froxlor-docker?include_prereleases&style=for-the-badge)](https://github.com/bloodhunterd/froxlor-docker/releases)
 [![Docker Build](https://img.shields.io/docker/cloud/build/bloodhunterd/froxlor?style=for-the-badge)](https://hub.docker.com/r/bloodhunterd/froxlor)
+[![Docker Pulls](https://img.shields.io/docker/pulls/bloodhunterd/froxlor?style=for-the-badge)](https://hub.docker.com/r/bloodhunterd/froxlor)
+[![Docker Stars](https://img.shields.io/docker/stars/bloodhunterd/froxlor?style=for-the-badge)](https://hub.docker.com/r/bloodhunterd/froxlor)
 [![License](https://img.shields.io/github/license/bloodhunterd/froxlor-docker?style=for-the-badge)](https://github.com/bloodhunterd/froxlor-docker/blob/master/LICENSE)
+
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P51U5SZ)
 
 # Froxlor Docker
 
-Docker Image for Froxlor Server Management Panel.
+Docker image for Froxlor Server Management Panel.
 
 ## Installation
 
-[Froxlor](https://froxlor.org/) must be downloaded separately and mounted into the container, since it must be setup individually.
+Download [Froxlor](https://froxlor.org/) and mount it into the container due individually setup.
 
 ## Configuration
 
@@ -58,6 +62,7 @@ docker-compose up -d
 * [NGINX](https://www.nginx.com/)
 * [MariaDB](https://mariadb.org/)
 * [PHP](https://www.php.net/)
+* [BIND](https://www.isc.org/bind/)
 * [Let's Encrypt](https://letsencrypt.org/)
 * [Debian](https://www.debian.org/)
 * [Docker](https://www.docker.com/)

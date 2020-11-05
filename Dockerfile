@@ -2,16 +2,21 @@ FROM debian:stable-slim
 
 # MariaDB
 ARG MARIADB_VERSION=10.5
+
 # PHP
 ENV PHP_VERSION_1=7.2
 ENV PHP_VERSION_2=7.3
 ENV PHP_VERSION_3=7.4
+
 # Timezone
 ENV TZ=Europe/Berlin
 
 # NGINX
 EXPOSE 80
 EXPOSE 443
+
+# BIND
+EXPOSE 53
 
 # Update and upgrade package repositories
 RUN apt-get update && \
@@ -51,9 +56,10 @@ RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8 
 # Update package repositories
 RUN apt-get update
 
-# Install NGINX, MariaDB, AwStats, Cron and Let's Encrypt
+# Install NGINX, MariaDB, BIND, AwStats, Cron and Let's Encrypt
 RUN apt-get install -y --no-install-recommends \
     awstats \
+    bind9 \
     cron \
     letsencrypt \
     libnss-extrausers \
@@ -124,6 +130,12 @@ RUN mkdir -p /var/lib/extrausers && \
     touch /var/lib/extrausers/passwd && \
     touch /var/lib/extrausers/group && \
     touch /var/lib/extrausers/shadow
+
+# Configure BIND
+RUN echo "include \"/etc/bind/froxlor_bind.conf\";" >> /etc/bind/named.conf.local && \
+    touch /etc/bind/froxlor_bind.conf && \
+    chown bind:0 /etc/bind/froxlor_bind.conf && \
+    chmod 0644 /etc/bind/froxlor_bind.conf
 
 # Create Froxlor user and group
 RUN addgroup --gid 9999 froxlorlocal && \
