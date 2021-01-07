@@ -1,6 +1,3 @@
-#
-# Froxlor logrotate snipet
-#
 /var/customers/logs/*.log {
   missingok
   weekly
