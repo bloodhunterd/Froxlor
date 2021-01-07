@@ -1,7 +1,6 @@
 [![Release](https://img.shields.io/github/v/release/bloodhunterd/froxlor-docker?include_prereleases&style=for-the-badge)](https://github.com/bloodhunterd/froxlor-docker/releases)
 [![Docker Build](https://img.shields.io/docker/cloud/build/bloodhunterd/froxlor?style=for-the-badge)](https://hub.docker.com/r/bloodhunterd/froxlor)
 [![Docker Pulls](https://img.shields.io/docker/pulls/bloodhunterd/froxlor?style=for-the-badge)](https://hub.docker.com/r/bloodhunterd/froxlor)
-[![Docker Stars](https://img.shields.io/docker/stars/bloodhunterd/froxlor?style=for-the-badge)](https://hub.docker.com/r/bloodhunterd/froxlor)
 [![License](https://img.shields.io/github/license/bloodhunterd/froxlor-docker?style=for-the-badge)](https://github.com/bloodhunterd/froxlor-docker/blob/master/LICENSE)
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P51U5SZ)
@@ -10,42 +9,40 @@
 
 Docker image for Froxlor Server Management Panel.
 
-## Installation
+## Deployment
 
-Download [Froxlor](https://froxlor.org/) and mount it into the container due individually setup.
+### Installation
 
-## Configuration
+Download the distributed Docker Compose file and adjust it for your needs.
 
-See distribution [Docker Compose file](https://github.com/bloodhunterd/froxlor-docker/blob/master/docker-compose.dist.yml).
+[![Docker Compose](https://img.shields.io/github/size/bloodhunterd/froxlor-docker/docker-compose.dist.yml?label=Docker%20Compose&style=for-the-badge)](https://github.com/bloodhunterd/froxlor-docker/blob/master/docker-compose.dist.yml)
 
-### Environment
+Download Froxlor from the Froxlor website and mount it into the container for individually setup.
+
+[![Froxlor website](https://img.shields.io/badge/Froxlor-Website-blue?style=for-the-badge)](https://https://froxlor.org/)
+
+### Configuration
 
 | ENV | Values¹ | Default | Description
 |--- |--- |--- |---
 | TZ | [PHP: List of supported timezones - Manual](https://www.php.net/manual/en/timezones.php) | Europe/Berlin | Timezone.
 
+### Ports
+
+| Port | Description
+|--- |---
+| 53 | Bind DNS.
+| 80 | HTTP port.
+| 443 | HTTPS port.
+
 ### Volumes
 
-Persist Froxlor, so the build in update process can be used. 
-
-```bash
-    volumes:
-      - ./froxlor/:/var/www/froxlor/
-```
-
-Persist customer web, mail and log directories. 
-
-```bash
-    volumes:
-      - ./customers/:/var/customers/
-```
-
-Persist SSL certificates ([Let's Encrypt](https://letsencrypt.org/)).
-
-```bash
-    volumes:
-      - ./ssl/:/etc/ssl/froxlor/
-```
+| Volume | Path | Read only | Description
+|--- |--- |--- |---
+| Froxlor | /var/www/froxlor/ | &#10008; | Froxlor Server Management Panel. *Need to persist to use the build in update process.*
+| Customers | /var/customers/ | &#10008; | Froxlor customer web, mail and log contents.
+| SSL certificates | /etc/ssl/froxlor/ | &#10008; | SSL certificates.
+&#10004; Yes &#10008; No
 
 ## Update
 

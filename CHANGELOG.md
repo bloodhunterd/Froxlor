@@ -1,18 +1,26 @@
 # Changelog
 
-All notable changes to this project will be documented in this file.
+All notable changes will be documented in this file.
 
-## <a name="v1-1-0"></a> [1.1.0](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.1.0) - 05.11.2020
+<a name="v1-2-0-dev"></a>
+## [1.2.0-dev](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.2.0-dev) &#9839; 07.01.2021
 
-* Another possible fix to prevent failing PHP services on the first start up added
+* Added Exim to fix sending emails
+* Upgraded NGINX version to 1.19
+
+<a name="v1-1-0"></a>
+## [1.1.0](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.1.0) &#9839; 05.11.2020
+
+* Fixed first start up bug with PHP
 * Added BIND as DNS service
 
-## <a name="v1-0-0"></a> [1.0.0](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.0.0) - 11.08.2020
+<a name="v1-0-0"></a>
+## [1.0.0](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.0.0) &#9839; 11.08.2020
 
-* Unneeded NSCD removed to increase performance
-* Support now 3 PHP versions (currently 7.2, 7.3 and 7.4)
-* MariaDB upgraded to major version 10.5
-* Delay between process startup added to prevent first startup bug.
-* Prevent multiple locale generation at start up. All locales are now available by default.
-* Froxlor code excluded from image, since it must be setup individually.
-* License changed from the Unlicense to MIT
+* Removed NSCD to increase performance
+* Supported PHP versions are now 7.2, 7.3 and 7.4
+* Upgraded MariaDB version to 10.5
+* Added delay to fixing first startup bug with PHP
+* Supported all locales by default
+* Excluded Froxlor code from image to set up individually
+* Changed license from The Unlicense to MIT

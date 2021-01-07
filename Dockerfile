@@ -29,16 +29,17 @@ EXPOSE 53
 # Base packages
 # ===================================================
 
-RUN apt update && \
-    apt upgrade -y --no-install-recommends
+RUN apt-get update && \
+    apt-get upgrade -y --no-install-recommends
 
-RUN apt install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
     apt-listchanges \
     apt-transport-https \
 	apt-utils \
     ca-certificates \
     curl \
     dirmngr \
+    exim4 \
     gnupg2 \
     locales \
     locales-all \
@@ -63,13 +64,13 @@ RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
 RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8 && \
     add-apt-repository "deb [arch=amd64] http://ftp.hosteurope.de/mirror/mariadb.org/repo/${MARIADB_VERSION}/debian buster main"
 
-RUN apt update
+RUN apt-get update
 
 # ===================================================
 # Froxlor service packages
 # ===================================================
 
-RUN apt install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
     awstats \
     bind9 \
     cron \
@@ -83,7 +84,7 @@ RUN apt install -y --no-install-recommends \
 # PHP
 # ===================================================
 
-RUN apt install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_1} \
     php${PHP_VERSION_1}-common \
     php${PHP_VERSION_1}-bcmath \
