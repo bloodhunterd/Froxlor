@@ -182,21 +182,10 @@ RUN mkdir -p /var/www && \
     mkdir -p /etc/ssl/froxlor
 
 # ===================================================
-# Add configurations
+# Filesystem
 # ===================================================
 
-COPY ./etc/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY ./etc/nginx/fastcgi_params /etc/nginx/fastcgi_params
-COPY ./etc/nginx/acme.conf /etc/nginx/acme.conf
-COPY ./etc/nginx/conf.d/ /etc/nginx/conf.d/
-
-COPY ./etc/cron.d/froxlor /etc/cron.d/froxlor
-
-COPY ./etc/logrotate.d/froxlor /etc/logrotate.d/froxlor
-
-COPY ./etc/nsswitch.conf /etc/nsswitch.conf
-
-COPY ./start.sh /start.sh
+COPY ./src/ /
 
 # ===================================================
 # Entrypoint

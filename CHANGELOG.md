@@ -3,15 +3,15 @@
 All notable changes will be documented in this file.
 
 <a name="v1-2-0-dev"></a>
-## [1.2.0-dev](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.2.0-dev) &#9839; 07.01.2021
+## [1.2.0-dev](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.2.0-dev) &#9839; 11.01.2021
 
-* Added Exim to fix sending emails
-* Upgraded NGINX version to 1.19
+* Added Exim to fix issue #4 No email dispatch from Froxlor possible
 
 <a name="v1-1-0"></a>
 ## [1.1.0](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.1.0) &#9839; 05.11.2020
 
-* Fixed first start up bug with PHP
+* Fixed first start up bug
+  with PHP
 * Added BIND as DNS service
 
 <a name="v1-0-0"></a>
