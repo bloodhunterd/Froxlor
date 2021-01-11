@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+      - '[0-9]+.[0-9]+.[0-9]+-dev'
+      - '[0-9]+.[0-9]+.[0-9]+-beta'
+
+jobs:
+  release:
+    name: Release
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Prepare environment variables
+        run: |
+          echo "SERVER_URL=$GITHUB_SERVER_URL" >> $GITHUB_ENV
+          echo "REPOSITORY=$GITHUB_REPOSITORY" >> $GITHUB_ENV
+          echo "VERSION=$(echo "$GITHUB_REF" | sed -e 's,.*/\(.*\),\1,')" >> $GITHUB_ENV
+
+      - name: Create GitHub release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: ${{ env.VERSION }}
+          tag_name: ${{ env.VERSION }}
+          body: |
+            See [changelog](${{ env.SERVER_URL }}/${{ env.REPOSITORY }}/blob/master/CHANGELOG.md#${{ env.VERSION }}).
+          draft: false
+          prerelease: ${{ contains(env.VERSION, '-beta') || contains(env.VERSION, '-dev') }}

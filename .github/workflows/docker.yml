@@ -9,18 +9,14 @@ on:
       - 'latest'
 
 jobs:
-  release:
-    name: Release
+  docker:
+    name: Docker
 
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-
-      - name: Prepare environment variables
-        run: |
-          echo "REPOSITORY=$GITHUB_REPOSITORY" >> $GITHUB_ENV
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v1
@@ -29,5 +25,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USER }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-          repository: ${{ env.REPOSITORY }}
+          repository: bloodhunterd/froxlor
           tag_with_ref: true
