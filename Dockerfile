@@ -7,9 +7,9 @@ FROM debian:stable-slim
 ARG MARIADB_VERSION=10.5
 
 # PHP
-ENV PHP_VERSION_1=7.2
-ENV PHP_VERSION_2=7.3
-ENV PHP_VERSION_3=7.4
+ENV PHP_VERSION_1=7.3
+ENV PHP_VERSION_2=7.4
+ENV PHP_VERSION_3=8.0
 
 # Timezone
 ENV TZ=Europe/Berlin
@@ -35,11 +35,9 @@ RUN apt-get update && \
 RUN apt-get install -y --no-install-recommends \
     apt-listchanges \
     apt-transport-https \
-	apt-utils \
     ca-certificates \
     curl \
     dirmngr \
-    exim4 \
     gnupg2 \
     locales \
     locales-all \
@@ -127,7 +125,6 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_3}-gd \
     php${PHP_VERSION_3}-imap \
     php${PHP_VERSION_3}-intl \
-    php${PHP_VERSION_3}-json \
     php${PHP_VERSION_3}-mbstring \
     php${PHP_VERSION_3}-mysql \
     php${PHP_VERSION_3}-opcache \

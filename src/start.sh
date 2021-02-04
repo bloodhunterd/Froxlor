@@ -8,14 +8,6 @@ ln -snf "/usr/share/zoneinfo/${TZ}" etc/localtime && \
 echo "${TZ}" > /etc/timezone
 
 # ===================================================
-# Mail delivery
-# ===================================================
-
-cp /etc/hostname /etc/mailname
-
-service exim4 restart
-
-# ===================================================
 # Start services
 # ===================================================
 
