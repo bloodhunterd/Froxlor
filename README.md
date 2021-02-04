@@ -1,5 +1,5 @@
 [![Release](https://img.shields.io/github/v/release/bloodhunterd/froxlor-docker?style=for-the-badge)](https://github.com/bloodhunterd/froxlor-docker/releases)
-[![Docker Build](https://img.shields.io/github/workflow/status/bloodhunterd/backup/Docker?style=for-the-badge&label=Docker%20Build)](https://github.com/bloodhunterd/backup/actions?query=workflow%3ADocker)
+[![Docker Build](https://img.shields.io/github/workflow/status/bloodhunterd/froxlor-docker/Docker?style=for-the-badge&label=Docker%20Build)](https://github.com/bloodhunterd/froxlor-docker/actions?query=workflow%3ADocker)
 [![Docker Pulls](https://img.shields.io/docker/pulls/bloodhunterd/froxlor?style=for-the-badge)](https://hub.docker.com/r/bloodhunterd/froxlor)
 [![License](https://img.shields.io/github/license/bloodhunterd/froxlor-docker?style=for-the-badge)](https://github.com/bloodhunterd/froxlor-docker/blob/master/LICENSE)
 
