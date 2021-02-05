@@ -1,11 +1,11 @@
-[![Release](https://img.shields.io/github/v/release/bloodhunterd/froxlor-docker?style=for-the-badge)](https://github.com/bloodhunterd/froxlor-docker/releases)
-[![Docker Build](https://img.shields.io/github/workflow/status/bloodhunterd/froxlor-docker/Docker?style=for-the-badge&label=Docker%20Build)](https://github.com/bloodhunterd/froxlor-docker/actions?query=workflow%3ADocker)
+[![Release](https://img.shields.io/github/v/release/bloodhunterd/froxlor?style=for-the-badge)](https://github.com/bloodhunterd/froxlor/releases)
+[![Docker Build](https://img.shields.io/github/workflow/status/bloodhunterd/froxlor/Docker?style=for-the-badge&label=Docker%20Build)](https://github.com/bloodhunterd/froxlor/actions?query=workflow%3ADocker)
 [![Docker Pulls](https://img.shields.io/docker/pulls/bloodhunterd/froxlor?style=for-the-badge)](https://hub.docker.com/r/bloodhunterd/froxlor)
-[![License](https://img.shields.io/github/license/bloodhunterd/froxlor-docker?style=for-the-badge)](https://github.com/bloodhunterd/froxlor-docker/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/bloodhunterd/froxlor?style=for-the-badge)](https://github.com/bloodhunterd/froxlor/blob/master/LICENSE)
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/bloodhunterd)
 
-# Froxlor Docker
+# Froxlor
 
 Docker image for Froxlor Server Management Panel.
 
@@ -68,7 +68,7 @@ services:
 
 ## Update
 
-Please note the [changelog](https://github.com/bloodhunterd/froxlor-docker/blob/master/CHANGELOG.md) to check for configuration changes before updating.
+Please note the [changelog](https://github.com/bloodhunterd/froxlor/blob/master/CHANGELOG.md) to check for configuration changes before updating.
 
 ```bash
 docker-compose pull
@@ -92,4 +92,4 @@ docker-compose up -d
 
 ## License
 
-This project is licensed under the MIT - see [LICENSE.md](https://github.com/bloodhunterd/froxlor-docker/blob/master/LICENSE) file for details.
+This project is licensed under the MIT - see [LICENSE.md](https://github.com/bloodhunterd/froxlor/blob/master/LICENSE) file for details.

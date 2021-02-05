@@ -3,20 +3,20 @@
 All notable changes will be documented in this file.
 
 <a name="v2-0-0"></a>
-## [2.0.0](https://github.com/bloodhunterd/froxlor-docker/releases/tag/2.0.0) &#9839; 03.02.2021
+## [2.0.0](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.0) &#9839; 03.02.2021
 
 * Canceled **PHP 7.2** support
 * Added **PHP 8.0** support
 
 <a name="v1-1-0"></a>
-## [1.1.0](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.1.0) &#9839; 05.11.2020
+## [1.1.0](https://github.com/bloodhunterd/froxlor/releases/tag/1.1.0) &#9839; 05.11.2020
 
 * Fixed first start up bug
   with PHP
 * Added BIND as DNS service
 
 <a name="v1-0-0"></a>
-## [1.0.0](https://github.com/bloodhunterd/froxlor-docker/releases/tag/1.0.0) &#9839; 11.08.2020
+## [1.0.0](https://github.com/bloodhunterd/froxlor/releases/tag/1.0.0) &#9839; 11.08.2020
 
 * Removed NSCD to increase performance
 * Supported **PHP** versions are now **7.2**, **7.3** and **7.4**
