@@ -20,7 +20,7 @@ Docker image for Froxlor Server Management Panel.
 
 Download Froxlor from the Froxlor website and mount it into the container for individually setup.
 
-[![Froxlor website](https://img.shields.io/badge/Froxlor-Website-blue?style=for-the-badge)](https://https://froxlor.org/)
+[![Froxlor website](https://img.shields.io/badge/Froxlor-Website-blue?style=for-the-badge)](https://froxlor.org/)
 
 ### Docker Compose
 
