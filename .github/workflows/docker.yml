@@ -19,7 +19,7 @@ jobs:
 
       - name: Prepare environment variables
         run: |
-          echo "REPOSITORY=$GITHUB_REPOSITORY" >> $GITHUB_ENV
+          echo "REPOSITORY=${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
           echo "VERSION=$(echo "$GITHUB_REF" | sed -e 's,.*/\(.*\),\1,')" >> $GITHUB_ENV
 
       - name: Build and push Docker image

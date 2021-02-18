@@ -2,6 +2,12 @@
 
 All notable changes will be documented in this file.
 
+<a name="v2-0-1"></a>
+## [2.0.1](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.1) &#9839; 18.02.2021
+
+* **PHP** versions updated
+* **NGINX** version updated
+
 <a name="v2-0-0"></a>
 ## [2.0.0](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.0) &#9839; 03.02.2021
 
