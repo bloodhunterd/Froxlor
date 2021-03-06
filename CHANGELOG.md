@@ -2,11 +2,16 @@
 
 All notable changes will be documented in this file.
 
+<a name="v2-0-2"></a>
+## [2.0.2](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.2) &#9839; 06.03.2021
+
+* Updated **PHP** versions to 7.4.16 and 8.0.3
+
 <a name="v2-0-1"></a>
 ## [2.0.1](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.1) &#9839; 18.02.2021
 
-* **PHP** versions updated
-* **NGINX** version updated
+* Updated **PHP** versions to 7.3.27, 7.4.15 and 8.0.2
+* Updated **NGINX** version to 1.19.7
 
 <a name="v2-0-0"></a>
 ## [2.0.0](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.0) &#9839; 03.02.2021
@@ -25,8 +30,8 @@ All notable changes will be documented in this file.
 ## [1.0.0](https://github.com/bloodhunterd/froxlor/releases/tag/1.0.0) &#9839; 11.08.2020
 
 * Removed NSCD to increase performance
-* Supported **PHP** versions are now **7.2**, **7.3** and **7.4**
-* Upgraded **MariaDB** version to **10.5**
+* Updated **PHP** to versions **7.2**, **7.3** and **7.4**
+* Updated **MariaDB** to version **10.5**
 * Added delay to fixing first startup bug with PHP
 * Supported all locales by default
 * Excluded Froxlor code from image to set up individually
