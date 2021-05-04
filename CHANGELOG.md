@@ -2,8 +2,13 @@
 
 All notable changes will be documented in this file.
 
+<a name="v2-0-5"></a>
+## [2.0.5](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.5) &#9839; 04.05.2021
+
+* Updated **PHP** versions to 7.3.28, 7.4.18 and 8.0.5
+
 <a name="v2-0-4"></a>
-## [2.0.4](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.3) &#9839; 17.04.2021
+## [2.0.4](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.4) &#9839; 17.04.2021
 
 * Updated **NGINX** version to 1.19.10
 
