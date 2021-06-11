@@ -4,7 +4,11 @@ FROM debian:stable-slim
 # Package versions
 # ===================================================
 
+# MariaDB
 ARG MARIADB_VERSION=10.5
+
+# NGINX
+ARG NGINX_VERSION=1.19.*
 
 # PHP
 ENV PHP_VERSION_1=7.3
@@ -76,7 +80,7 @@ RUN apt-get install -y --no-install-recommends \
     libnss-extrausers \
     logrotate \
     mariadb-client \
-    nginx
+    nginx=${NGINX_VERSION}
 
 # ===================================================
 # PHP

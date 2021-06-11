@@ -2,6 +2,12 @@
 
 All notable changes will be documented in this file.
 
+<a name="v2-0-6"></a>
+## [2.0.6](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.6) &#9839; 11.06.2021
+
+* Updated **PHP** versions to 7.4.20 and 8.0.7
+* Updated **MariaDB** version to 10.5.10
+
 <a name="v2-0-5"></a>
 ## [2.0.5](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.5) &#9839; 04.05.2021
 
