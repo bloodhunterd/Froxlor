@@ -2,6 +2,11 @@
 
 All notable changes will be documented in this file.
 
+<a name="v2-1-0"></a>
+## [2.1.0](https://github.com/bloodhunterd/froxlor/releases/tag/2.1.0) &#9839; 11.06.2021
+
+* Updated **NGINX** version to 1.21.0.
+
 <a name="v2-0-6"></a>
 ## [2.0.6](https://github.com/bloodhunterd/froxlor/releases/tag/2.0.6) &#9839; 11.06.2021
 
