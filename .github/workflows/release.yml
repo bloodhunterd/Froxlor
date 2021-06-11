@@ -22,6 +22,7 @@ jobs:
           echo "SERVER_URL=$GITHUB_SERVER_URL" >> $GITHUB_ENV
           echo "REPOSITORY=$GITHUB_REPOSITORY" >> $GITHUB_ENV
           echo "VERSION=$(echo "$GITHUB_REF" | sed -e 's,.*/\(.*\),\1,')" >> $GITHUB_ENV
+          echo "TAG=$(echo "$VERSION" | sed -e 's/\./-/g')" >> $GITHUB_ENV
 
       - name: Create GitHub release
         uses: actions/create-release@v1
@@ -31,6 +32,6 @@ jobs:
           release_name: ${{ env.VERSION }}
           tag_name: ${{ env.VERSION }}
           body: |
-            See [changelog](${{ env.SERVER_URL }}/${{ env.REPOSITORY }}/blob/master/CHANGELOG.md#${{ env.VERSION }}).
+            See [changelog](${{ env.SERVER_URL }}/${{ env.REPOSITORY }}/blob/master/CHANGELOG.md#v${{ env.TAG }}).
           draft: false
           prerelease: ${{ contains(env.VERSION, '-beta') || contains(env.VERSION, '-dev') }}
