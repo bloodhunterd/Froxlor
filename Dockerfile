@@ -5,7 +5,7 @@ FROM debian:stable-slim
 ########################################################################################################################
 
 # MariaDB
-ARG MARIADB_VERSION=10.5
+ARG MARIADB_VERSION=10.6
 
 # NGINX
 ARG NGINX_VERSION=1.21.*
@@ -64,7 +64,7 @@ RUN wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
     sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
 
 RUN apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8 && \
-    add-apt-repository "deb [arch=amd64] http://ftp.hosteurope.de/mirror/mariadb.org/repo/${MARIADB_VERSION}/debian buster main"
+    add-apt-repository "deb [arch=amd64] http://ftp.hosteurope.de/mirror/mariadb.org/repo/${MARIADB_VERSION}/debian $(lsb_release -sc) main"
 
 RUN apt-get update
 
@@ -80,7 +80,8 @@ RUN apt-get install -y --no-install-recommends \
     libnss-extrausers \
     logrotate \
     mariadb-client \
-    nginx=${NGINX_VERSION}
+    nginx=${NGINX_VERSION} \
+    nscd
 
 ########################################################################################################################
 # PHP

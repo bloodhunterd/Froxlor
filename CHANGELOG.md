@@ -2,6 +2,15 @@
 
 All notable changes will be documented in this file.
 
+<a name="v2-2-0"></a>
+## [2.2.0](https://github.com/bloodhunterd/froxlor/releases/tag/2.2.0) &#9839; 12.09.2021
+
+* Updated **Debian** version to 11 (*bullseye*)
+* Updated **PHP** versions to 7.3.30, 7.4.23 and 8.0.10
+* Updated **MariaDB** version to 10.6.4
+* Updated **NGINX** version to 1.21.3
+* Fixed missing **NSCD** package
+
 <a name="v2-1-2"></a>
 ## [2.1.2](https://github.com/bloodhunterd/froxlor/releases/tag/2.1.2) &#9839; 08.08.2021
 
@@ -70,7 +79,7 @@ All notable changes will be documented in this file.
 <a name="v1-0-0"></a>
 ## [1.0.0](https://github.com/bloodhunterd/froxlor/releases/tag/1.0.0) &#9839; 11.08.2020
 
-* Removed NSCD to increase performance
+* Removed **NSCD** to increase performance
 * Updated **PHP** to versions **7.2**, **7.3** and **7.4**
 * Updated **MariaDB** to version **10.5**
 * Added delay to fixing first startup bug with PHP
