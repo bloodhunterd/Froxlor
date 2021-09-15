@@ -96,6 +96,7 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_1}-curl \
     php${PHP_VERSION_1}-fpm \
     php${PHP_VERSION_1}-gd \
+    php${PHP_VERSION_1}-imagick \
     php${PHP_VERSION_1}-imap \
     php${PHP_VERSION_1}-intl \
     php${PHP_VERSION_1}-json \
@@ -112,6 +113,7 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_2}-curl \
     php${PHP_VERSION_2}-fpm \
     php${PHP_VERSION_2}-gd \
+    php${PHP_VERSION_2}-imagick \
     php${PHP_VERSION_2}-imap \
     php${PHP_VERSION_2}-intl \
     php${PHP_VERSION_2}-json \
@@ -128,6 +130,7 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_3}-curl \
     php${PHP_VERSION_3}-fpm \
     php${PHP_VERSION_3}-gd \
+    php${PHP_VERSION_3}-imagick \
     php${PHP_VERSION_3}-imap \
     php${PHP_VERSION_3}-intl \
     php${PHP_VERSION_3}-mbstring \

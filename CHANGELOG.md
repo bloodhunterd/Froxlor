@@ -2,6 +2,11 @@
 
 All notable changes will be documented in this file.
 
+<a name="v2-2-1"></a>
+## [2.2.1](https://github.com/bloodhunterd/froxlor/releases/tag/2.2.1) &#9839; 15.09.2021
+
+* Added **[ImageMagic](https://imagemagick.org/)** support
+
 <a name="v2-2-0"></a>
 ## [2.2.0](https://github.com/bloodhunterd/froxlor/releases/tag/2.2.0) &#9839; 12.09.2021
 
@@ -72,8 +77,8 @@ All notable changes will be documented in this file.
 <a name="v1-1-0"></a>
 ## [1.1.0](https://github.com/bloodhunterd/froxlor/releases/tag/1.1.0) &#9839; 05.11.2020
 
-* Fixed first PHP startup bug
-* Added BIND DNS service
+* Fixed first **PHP** startup bug
+* Added **BIND DNS** service
 * Updated **MariaDB** version to 10.5.7
 
 <a name="v1-0-0"></a>
