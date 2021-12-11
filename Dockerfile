@@ -11,9 +11,9 @@ ARG MARIADB_VERSION=10.6
 ARG NGINX_VERSION=1.21.*
 
 # PHP
-ENV PHP_VERSION_1=7.3
-ENV PHP_VERSION_2=7.4
-ENV PHP_VERSION_3=8.0
+ENV PHP_VERSION_1=7.4
+ENV PHP_VERSION_2=8.0
+ENV PHP_VERSION_3=8.1
 
 # Timezone
 ENV TZ=Europe/Berlin
@@ -116,7 +116,6 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_2}-imagick \
     php${PHP_VERSION_2}-imap \
     php${PHP_VERSION_2}-intl \
-    php${PHP_VERSION_2}-json \
     php${PHP_VERSION_2}-mbstring \
     php${PHP_VERSION_2}-mysql \
     php${PHP_VERSION_2}-opcache \

@@ -2,6 +2,12 @@
 
 All notable changes will be documented in this file.
 
+<a name="v3-0-0"></a>
+## [3.0.0](https://github.com/bloodhunterd/froxlor/releases/tag/3.0.0) &#9839; 11.12.2021
+
+* Canceled **PHP 7.3** support
+* Added **PHP 8.1** support
+
 <a name="v2-2-3"></a>
 ## [2.2.3](https://github.com/bloodhunterd/froxlor/releases/tag/2.2.3) &#9839; 11.12.2021
 
