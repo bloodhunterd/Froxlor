@@ -12,7 +12,7 @@ Docker image for Froxlor Server Management Panel.
 ## Features
 
 * [NGINX](https://www.nginx.com/) webserver support
-* [PHP](https://www.php.net/) 7.3, 7.4 and 8.0 support
+* [PHP](https://www.php.net/) 7.4, 8.0 and 8.1 support
 * [BIND](https://www.isc.org/bind/) DNS support
 * [Let's Encrypt](https://letsencrypt.org/) SSL certificate support
 
