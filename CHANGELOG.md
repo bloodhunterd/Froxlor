@@ -2,10 +2,16 @@
 
 All notable changes will be documented in this file.
 
+All notable changes will be documented in this file.<a name="v3-0-2"></a>
+## [3.0.2](https://github.com/bloodhunterd/froxlor/releases/tag/3.0.2) &#9839; 06.02.2022
+
+* Updated **PHP** versions to 8.0.15 and 8.1.2
+* Updated **NGINX** version to 1.21.6
+
 <a name="v3-0-1"></a>
 ## [3.0.1](https://github.com/bloodhunterd/froxlor/releases/tag/3.0.1) &#9839; 09.01.2022
 
-* Updated **PHP** versions to 7.4.27, 8.0.14 and 8.0.1
+* Updated **PHP** versions to 7.4.27, 8.0.14 and 8.1.1
 * Updated **NGINX** version to 1.21.5
 
 <a name="v3-0-0"></a>
