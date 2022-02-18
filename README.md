@@ -31,8 +31,8 @@ services:
   froxlor:
     image: bloodhunterd/froxlor
     ports:
-      - '80'
-      - '443'
+      - '80:80'
+      - '443:443'
     restart: unless-stopped
     volumes:
       - ./froxlor/:/var/www/froxlor/
