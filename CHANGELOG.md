@@ -2,7 +2,13 @@
 
 All notable changes will be documented in this file.
 
-All notable changes will be documented in this file.<a name="v3-0-2"></a>
+<a name="v3-0-3"></a>
+## [3.0.3](https://github.com/bloodhunterd/froxlor/releases/tag/3.0.3) &#9839; 03.05.2022
+
+* Updated **PHP** versions to 7.4.29, 8.0.18 and 8.1.5
+* Updated **MariaDB** version to 10.6.7
+
+<a name="v3-0-2"></a>
 ## [3.0.2](https://github.com/bloodhunterd/froxlor/releases/tag/3.0.2) &#9839; 06.02.2022
 
 * Updated **PHP** versions to 8.0.15 and 8.1.2
