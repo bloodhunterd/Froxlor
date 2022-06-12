@@ -5,7 +5,7 @@ FROM debian:stable-slim
 ########################################################################################################################
 
 # MariaDB
-ARG MARIADB_VERSION=10.6
+ARG MARIADB_VERSION=10.8
 
 # NGINX
 ARG NGINX_VERSION=1.21.*
