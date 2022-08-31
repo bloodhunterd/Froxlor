@@ -2,6 +2,13 @@
 
 All notable changes will be documented in this file.
 
+<a name="v3-2-0"></a>
+## [3.2.0](https://github.com/bloodhunterd/froxlor/releases/tag/3.2.0) &#9839; 31.08.2022
+
+* Updated **PHP** versions to 7.4.30, 8.0.22 and 8.1.9
+* Updated **NGINX** version to 1.23.1
+* Updated **MariaDB** version to 10.9.2
+
 <a name="v3-1-0"></a>
 ## [3.1.0](https://github.com/bloodhunterd/froxlor/releases/tag/3.1.0) &#9839; 12.06.2022
 
