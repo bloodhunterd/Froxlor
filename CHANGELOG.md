@@ -2,6 +2,13 @@
 
 All notable changes will be documented in this file.
 
+<a name="v3-2-1"></a>
+## [3.2.1](https://github.com/bloodhunterd/froxlor/releases/tag/3.2.1) &#9839; 15.09.2022
+
+* Fixed **BIND DNS** service startup
+* Enabled secure APT package transport
+* Updated **PHP** version to 8.1.10
+
 <a name="v3-2-0"></a>
 ## [3.2.0](https://github.com/bloodhunterd/froxlor/releases/tag/3.2.0) &#9839; 31.08.2022
 

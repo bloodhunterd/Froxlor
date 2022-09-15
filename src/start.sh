@@ -11,11 +11,9 @@ echo "${TZ}" > /etc/timezone
 # Start services
 ########################################################################################################################
 
-service cron start
-
-service bind9 start
-
-service nginx start
+cron
+named
+nginx
 
 service php${PHP_VERSION_1}-fpm start
 service php${PHP_VERSION_2}-fpm start

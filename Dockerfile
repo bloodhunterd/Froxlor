@@ -38,12 +38,17 @@ EXPOSE 53
 # ======================================================================================================================
 
 RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    apt-listchanges \
+    apt-transport-https \
+    ca-certificates
+
+RUN sed -i 's/http:/https:/g' /etc/apt/sources.list
+
+RUN apt-get update && \
     apt-get upgrade -y --no-install-recommends
 
 RUN apt-get install -y --no-install-recommends \
-    apt-listchanges \
-    apt-transport-https \
-    ca-certificates \
     curl \
     dirmngr \
     gnupg2 \
