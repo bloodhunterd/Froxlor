@@ -2,6 +2,12 @@
 
 All notable changes will be documented in this file.
 
+<a name="v3-2-3"></a>
+## [3.2.3](https://github.com/bloodhunterd/froxlor/releases/tag/3.2.3) &#9839; 01.11.2022
+
+* Updated **PHP** versions to 8.0.25 and 8.1.12
+* Updated **NGINX** version to 1.23.2
+
 <a name="v3-2-2"></a>
 ## [3.2.2](https://github.com/bloodhunterd/froxlor/releases/tag/3.2.2) &#9839; 12.10.2022
 
