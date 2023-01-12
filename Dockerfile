@@ -5,7 +5,7 @@ FROM debian:stable-slim
 # ======================================================================================================================
 
 # MariaDB
-ARG MARIADB_VERSION=10.9
+ARG MARIADB_VERSION=10.10
 
 # NGINX
 ARG NGINX_VERSION=1.23.*
@@ -14,6 +14,7 @@ ARG NGINX_VERSION=1.23.*
 ENV PHP_VERSION_1=7.4
 ENV PHP_VERSION_2=8.0
 ENV PHP_VERSION_3=8.1
+ENV PHP_VERSION_4=8.2
 
 # ======================================================================================================================
 # Configuration
@@ -143,7 +144,23 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_3}-mysql \
     php${PHP_VERSION_3}-opcache \
     php${PHP_VERSION_3}-xml \
-    php${PHP_VERSION_3}-zip
+    php${PHP_VERSION_3}-zip \
+    php${PHP_VERSION_4} \
+    php${PHP_VERSION_4}-common \
+    php${PHP_VERSION_4}-bcmath \
+    php${PHP_VERSION_4}-bz2 \
+    php${PHP_VERSION_4}-cli \
+    php${PHP_VERSION_4}-curl \
+    php${PHP_VERSION_4}-fpm \
+    php${PHP_VERSION_4}-gd \
+    php${PHP_VERSION_4}-imagick \
+    php${PHP_VERSION_4}-imap \
+    php${PHP_VERSION_4}-intl \
+    php${PHP_VERSION_4}-mbstring \
+    php${PHP_VERSION_4}-mysql \
+    php${PHP_VERSION_4}-opcache \
+    php${PHP_VERSION_4}-xml \
+    php${PHP_VERSION_4}-zip
 
 # ======================================================================================================================
 # AWStats
