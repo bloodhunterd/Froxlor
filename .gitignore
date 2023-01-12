@@ -1,3 +1,4 @@
+.data
 .env
 .idea
 docker-compose.yml

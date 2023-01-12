@@ -2,8 +2,13 @@
 
 All notable changes will be documented in this file.
 
+<a name="v3-3-1"></a>
+## [3.3.1](https://github.com/bloodhunterd/froxlor/releases/tag/3.3.1) &#9839; 13.01.2023
+
+* Fixed missing PHP-GMP package requirement for all versions
+
 <a name="v3-3-0"></a>
-## [3.3.0](https://github.com/bloodhunterd/froxlor/releases/tag/3.3.0) &#9839; 13.01.2023
+## [3.3.0](https://github.com/bloodhunterd/froxlor/releases/tag/3.3.0) &#9839; 12.01.2023
 
 * Added **PHP 8.2** support (version 8.2.1)
 * Updated **PHP** versions to 7.4.33, 8.0.27 and 8.1.14

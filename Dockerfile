@@ -104,6 +104,7 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_1}-curl \
     php${PHP_VERSION_1}-fpm \
     php${PHP_VERSION_1}-gd \
+    php${PHP_VERSION_1}-gmp \
     php${PHP_VERSION_1}-imagick \
     php${PHP_VERSION_1}-imap \
     php${PHP_VERSION_1}-intl \
@@ -121,6 +122,7 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_2}-curl \
     php${PHP_VERSION_2}-fpm \
     php${PHP_VERSION_2}-gd \
+    php${PHP_VERSION_2}-gmp \
     php${PHP_VERSION_2}-imagick \
     php${PHP_VERSION_2}-imap \
     php${PHP_VERSION_2}-intl \
@@ -137,6 +139,7 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_3}-curl \
     php${PHP_VERSION_3}-fpm \
     php${PHP_VERSION_3}-gd \
+    php${PHP_VERSION_3}-gmp \
     php${PHP_VERSION_3}-imagick \
     php${PHP_VERSION_3}-imap \
     php${PHP_VERSION_3}-intl \
@@ -153,6 +156,7 @@ RUN apt-get install -y --no-install-recommends \
     php${PHP_VERSION_4}-curl \
     php${PHP_VERSION_4}-fpm \
     php${PHP_VERSION_4}-gd \
+    php${PHP_VERSION_4}-gmp \
     php${PHP_VERSION_4}-imagick \
     php${PHP_VERSION_4}-imap \
     php${PHP_VERSION_4}-intl \
