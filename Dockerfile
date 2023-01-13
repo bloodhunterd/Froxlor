@@ -195,11 +195,11 @@ RUN echo "include \"/etc/bind/froxlor_bind.conf\";" >> /etc/bind/named.conf.loca
     chmod 0644 /etc/bind/froxlor_bind.conf
 
 # ======================================================================================================================
-# Froxlor user and groups
+# Froxlor user and group
 # ======================================================================================================================
 
-RUN addgroup --gid 9999 froxlorlocal && \
-    adduser --no-create-home --uid 9999 --ingroup froxlorlocal --shell /bin/false --disabled-password --gecos '' froxlorlocal && \
+RUN groupadd -f froxlorlocal && \
+    useradd -s /bin/false -g froxlorlocal froxlorlocal && \
     adduser www-data froxlorlocal
 
 # ======================================================================================================================

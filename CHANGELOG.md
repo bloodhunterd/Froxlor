@@ -2,6 +2,13 @@
 
 All notable changes will be documented in this file.
 
+<a name="v3-3-2"></a>
+## [3.3.2](https://github.com/bloodhunterd/froxlor/releases/tag/3.3.2) &#9839; 13.01.2023
+
+* Fixed access rights
+* Fixed cron execution
+* Fixed missing start of PHP 8.2 FPM service
+
 <a name="v3-3-1"></a>
 ## [3.3.1](https://github.com/bloodhunterd/froxlor/releases/tag/3.3.1) &#9839; 13.01.2023
 
