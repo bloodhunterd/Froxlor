@@ -11,7 +11,7 @@ ln -fns "/usr/share/zoneinfo/${TZ}" etc/localtime && echo "${TZ}" > /etc/timezon
 # ======================================================================================================================
 
 # PHP-FPM
-chown -R www-data:www-data /var/www/froxlor
+chown -R froxlorlocal:froxlorlocal /var/www/froxlor/
 php /var/www/froxlor/bin/froxlor-cli froxlor:cron --force
 
 # Cron

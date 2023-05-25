@@ -2,6 +2,11 @@
 
 All notable changes will be documented in this file.
 
+<a name="v4-0-1"></a>
+## [4.0.1](https://github.com/bloodhunterd/froxlor/releases/tag/4.0.1) &#9839; 25.05.2023
+
+* Fix Froxlor folder permissions
+
 <a name="v4-0-0"></a>
 ## [4.0.0](https://github.com/bloodhunterd/froxlor/releases/tag/4.0.0) &#9839; 25.05.2023
 
