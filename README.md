@@ -15,6 +15,7 @@ Docker image for Froxlor Server Management Panel.
 * [PHP](https://www.php.net/) 7.4, 8.0, 8.1 and 8.2 support
 * [BIND](https://www.isc.org/bind/) DNS support
 * [Let's Encrypt](https://letsencrypt.org/) SSL certificate support
+* [GoAccess](https://goaccess.io/) web log analyzer support
 
 ## Deployment
 
@@ -39,8 +40,8 @@ services:
       - ./customers/logs/:/var/customers/logs/
       - ./customers/mail/:/var/customers/mail/
       - ./customers/webs:/var/customers/webs/
-      - ./.acme.sh/:/root/.acme.sh/
       - ./ssl/:/etc/ssl/froxlor/
+      - ./.acme.sh/:/root/.acme.sh/
 ~~~
 
 ### Configuration
@@ -79,14 +80,16 @@ docker-compose up -d
 
 ## Build With
 
-* [Froxlor](https://froxlor.org/)
-* [NGINX](https://www.nginx.com/)
-* [MariaDB](https://mariadb.org/)
-* [PHP](https://www.php.net/)
+* [AWStats](https://awstats.sourceforge.io/)
 * [BIND](https://www.isc.org/bind/)
-* [Let's Encrypt](https://letsencrypt.org/)
 * [Debian](https://www.debian.org/)
 * [Docker](https://www.docker.com/)
+* [Froxlor](https://froxlor.org/)
+* [GoAccess](https://goaccess.io/)
+* [Let's Encrypt](https://letsencrypt.org/)
+* [MariaDB](https://mariadb.org/)
+* [NGINX](https://www.nginx.com/)
+* [PHP](https://www.php.net/)
 
 ## Authors
 

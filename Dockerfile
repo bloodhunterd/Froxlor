@@ -1,14 +1,16 @@
-FROM debian:stable-slim
+ARG DEBIAN_VERSION=11.7
+
+FROM debian:${DEBIAN_VERSION}-slim
 
 # ======================================================================================================================
 # Package versions
 # ======================================================================================================================
 
 # MariaDB
-ARG MARIADB_VERSION=10.10
+ARG MARIADB_VERSION=10.11
 
 # NGINX
-ARG NGINX_VERSION=1.23.*
+ARG NGINX_VERSION=1.25.*
 
 # PHP
 ENV PHP_VERSION_1=7.4
@@ -85,6 +87,8 @@ RUN apt-get install -y --no-install-recommends \
     awstats \
     bind9 \
     cron \
+    goaccess \
+    jq \
     letsencrypt \
     libnss-extrausers \
     mariadb-client \
@@ -180,10 +184,10 @@ RUN cp /usr/share/awstats/tools/awstats_buildstaticpages.pl /usr/bin/ && \
 # Lib extrausers
 # ======================================================================================================================
 
-RUN mkdir -p /var/lib/extrausers && \
-    touch /var/lib/extrausers/passwd && \
-    touch /var/lib/extrausers/group && \
-    touch /var/lib/extrausers/shadow
+RUN mkdir -p /var/lib/extrausers && touch \
+    /var/lib/extrausers/passwd \
+    /var/lib/extrausers/group \
+    /var/lib/extrausers/shadow
 
 # ======================================================================================================================
 # BIND DNS
@@ -203,19 +207,21 @@ RUN groupadd -f froxlorlocal && \
     adduser www-data froxlorlocal
 
 # ======================================================================================================================
-# Froxlor directories
-# ======================================================================================================================
-
-RUN mkdir -p /var/www && \
-    mkdir -p /var/customers/logs && \
-    mkdir -p /var/customers/mail && \
-    mkdir -p /var/customers/webs && \
-    mkdir -p /var/customers/tmp && \
-    mkdir -p /etc/ssl/froxlor
-
-# ======================================================================================================================
 # Filesystem
 # ======================================================================================================================
+
+RUN mkdir -p \
+    /etc/ssl/froxlor \
+#    /opt/froxlor \
+    /var/customers/logs \
+    /var/customers/mail \
+    /var/customers/webs \
+    /var/customers/tmp \
+    /var/www/froxlor
+
+#RUN wget -O /opt/froxlor/froxlor-latest.tar.gz https://files.froxlor.org/releases/froxlor-latest.tar.gz && \
+#    tar xvfz /opt/froxlor/froxlor-latest.tar.gz && \
+#    rm /opt/froxlor/froxlor-latest.tar.gz
 
 COPY ./src/ /
 

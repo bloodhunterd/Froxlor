@@ -2,6 +2,18 @@
 
 All notable changes will be documented in this file.
 
+<a name="v4-0-0"></a>
+## [4.0.0](https://github.com/bloodhunterd/froxlor/releases/tag/4.0.0) &#9839; 25.05.2023
+
+* Fix cron execution for Froxlor version **2.0.0** and above
+* Add **GoAccess** version **1.4**
+* Update **PHP** versions to **8.0.28**, **8.1.18** and **8.2.6**
+* Update **NGINX** version to **1.25.0**
+* Update **MariaDB** version to **10.11.3**
+* Update **Debian** version to **11.7**
+
+## :warning: Previous versions are only compatible with Froxlor 0.10.x
+
 <a name="v3-3-2"></a>
 ## [3.3.2](https://github.com/bloodhunterd/froxlor/releases/tag/3.3.2) &#9839; 13.01.2023
 
