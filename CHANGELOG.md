@@ -2,6 +2,13 @@
 
 All notable changes will be documented in this file.
 
+<a name="v4-0-0"></a>
+## [4.0.2](https://github.com/bloodhunterd/froxlor/releases/tag/4.0.0) &#9839; 02.09.2023
+
+* Update **PHP** versions to **8.0.30**, **8.1.23** and **8.2.10**
+* Update **NGINX** version to **1.25.2**
+* Update **MariaDB** version to **10.11.5**
+
 <a name="v4-0-1"></a>
 ## [4.0.1](https://github.com/bloodhunterd/froxlor/releases/tag/4.0.1) &#9839; 25.05.2023
 
